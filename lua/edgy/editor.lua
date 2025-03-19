@@ -154,7 +154,9 @@ function M.goto_main()
   end)
 
   if #wins > 0 then
-    vim.api.nvim_set_current_win(wins[1])
+    vim.schedule(function()
+      vim.api.nvim_set_current_win(wins[1])
+    end)
   end
 end
 
